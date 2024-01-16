@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'wrapyoutube',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'f07cb4d988e88bf53b285b2ae926fd1d',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '4782e4cf775d7304927a8520b2674115',
+  'native_key' => 'wrapyoutube_front_js',
+  'object' => '{"key":"wrapyoutube_front_js","value":"[[++assets_url]]components\\/wrapyoutube\\/js\\/web\\/default.js","xtype":"textfield","namespace":"wrapyoutube","area":"wrapyoutube_main","editedon":null}',
+);

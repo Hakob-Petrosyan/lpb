@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="textadvs" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="textadvs" version="1.1">
+
+    <object class="txaObject" table="textadvs_objects" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="content" dbtype="text" phptype="string" null="true" default=""/>
+        <field key="position" dbtype="varchar" precision="6" phptype="string" null="false" default="before"/> <!--before, after-->
+        <field key="tag" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="index" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true" default="0"/>
+        <field key="template" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="true"/>
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+        <field key="properties" dbtype="text" phptype="json" null="true"/>
+
+        <index alias="template" name="template" primary="false" unique="false" type="BTREE">
+            <column key="template" length="" collation="A" null="false"/>
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false"/>
+        </index>
+
+        <composite alias="Contents" class="txaContent" local="id" foreign="object" cardinality="many" owner="local"/>
+        <aggregate alias="Template" class="modTemplate" local="template" foreign="id" cardinality="one" owner="foreign"/>
+    </object>
+
+
+    <object class="txaContent" table="textadvs_contents" extends="xPDOSimpleObject">
+        <field key="object" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0"/>
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="content" dbtype="text" phptype="string" null="true" default=""/>
+        <field key="current" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="0"/>
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+        <field key="properties" dbtype="text" phptype="json" null="true"/>
+
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false"/>
+        </index>
+
+        <aggregate alias="Object" class="txaObject" local="object" foreign="id" cardinality="one" owner="foreign"/>
+    </object>
+
+</model>

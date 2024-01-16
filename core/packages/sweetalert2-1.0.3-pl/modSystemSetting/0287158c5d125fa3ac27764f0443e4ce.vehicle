@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => true,
+  'related_objects' => false,
+  'namespace' => 'sweetalert2',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '5b5183ca462cac690d6af55460e6ada8',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '0287158c5d125fa3ac27764f0443e4ce',
+  'native_key' => 'swal2_width',
+  'object' => '{"key":"swal2_width","value":"19rem","xtype":"textfield","namespace":"sweetalert2","area":"swal2_main","editedon":null,"name":"setting_swal2_width"}',
+);

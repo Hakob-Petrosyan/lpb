@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'ckeditor',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '870781843fcdcc3ed5bdb4692c1a05eb',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '2cd8c18c4a6c3b79274b6815151096f6',
+  'native_key' => 'ckeditor.autocorrect_double_quotes',
+  'object' => '{"key":"ckeditor.autocorrect_double_quotes","value":"\\u00ab\\u00bb","xtype":"textfield","namespace":"ckeditor","area":"general","editedon":null}',
+);

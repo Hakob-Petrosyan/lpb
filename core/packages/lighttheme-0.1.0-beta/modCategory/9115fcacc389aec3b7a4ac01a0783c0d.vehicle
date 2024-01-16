@@ -1,0 +1,34 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => true,
+  'namespace' => 'LightTheme',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"lighttheme-0.1.0-beta\\/modCategory\\/9115fcacc389aec3b7a4ac01a0783c0d\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"lighttheme"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"lighttheme-0.1.0-beta\\/modCategory\\/9115fcacc389aec3b7a4ac01a0783c0d\\/1\\/","target":"return MODX_MANAGER_PATH . \'templates\\/\';","name":"light_theme"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"lighttheme-0.1.0-beta\\/modCategory\\/9115fcacc389aec3b7a4ac01a0783c0d.lighttheme_resolver_2oUK10.resolver","type":"php","name":"lighttheme_resolver_2oUK10"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '28e32d878ae214bf25b70f7b89c5a3f6',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '9115fcacc389aec3b7a4ac01a0783c0d',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"LightTheme","rank":0}',
+);

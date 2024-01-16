@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="pageblocks" baseClass="xPDOObject" platform="mysql" defaultEngine="InnoDB" phpdoc-package="pageblocks"
+       version="1.1">
+
+    <object class="pageBlock" table="pb_blocks" extends="xPDOSimpleObject">
+        <field key="resource_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0" index="index"/>
+        <field key="context_key" dbtype="varchar" precision="100" phptype="string" null="false" default="web" index="index" />
+        <field key="cultureKey" dbtype="varchar" precision="100" phptype="string" null="false" default="ru" index="index" />
+        <field key="constructor_id" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="collection_id" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="object_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0" index="index"/>
+        <field key="chunk" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index"/>
+        <field key="values" dbtype="mediumtext" phptype="string" null="true" default=""/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1" index="index" />
+        <field key="baseblock" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="unique" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
+
+        <index alias="resource_id" name="resource_id" primary="false" unique="false" type="BTREE">
+            <column key="resource_id" length="" collation="A" null="false"/>
+        </index>
+        <index alias="context_key" name="context_key" primary="false" unique="false" type="BTREE">
+            <column key="context_key" length="" collation="A" null="false"/>
+        </index>
+        <index alias="cultureKey" name="cultureKey" primary="false" unique="false" type="BTREE">
+            <column key="cultureKey" length="" collation="A" null="false"/>
+        </index>
+        <index alias="constructor_id" name="constructor_id" primary="false" unique="false" type="BTREE">
+            <column key="constructor_id" length="" collation="A" null="false"/>
+        </index>
+        <index alias="chunk" name="chunk" primary="false" unique="false" type="BTREE">
+            <column key="chunk" length="" collation="A" null="false"/>
+        </index>
+        <index alias="rank" name="rank" primary="false" unique="false" type="BTREE">
+            <column key="rank" length="" collation="A" null="false"/>
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false"/>
+        </index>
+        <index alias="baseblock" name="baseblock" primary="false" unique="false" type="BTREE">
+            <column key="baseblock" length="" collation="A" null="false"/>
+        </index>
+        <index alias="unique" name="unique" primary="false" unique="false" type="BTREE">
+            <column key="unique" length="" collation="A" null="false"/>
+        </index>
+        <index alias="object_id" name="object_id" primary="false" unique="false" type="BTREE">
+            <column key="object_id" length="" collation="A" null="false"/>
+        </index>
+
+        <composite alias="Tables" class="blockTableValue" local="id" foreign="block_id" cardinality="many" owner="local"/>
+        <composite alias="Files" class="blockFile" local="id" foreign="block_id" cardinality="many" owner="local"/>
+        <composite alias="Videos" class="blockVideo" local="id" foreign="block_id" cardinality="many" owner="local"/>
+
+        <aggregate alias="Constructor" class="blockConstructor" local="constructor_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Collection" class="blockCollection" local="collection_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Resource" class="modResource" local="object_id" foreign="id" cardinality="one" owner="local"/>
+        <aggregate alias="Childrens" class="pageBlock" local="id" foreign="baseblock" cardinality="many" owner="local">
+            <criteria target="foreign"><![CDATA[{"unique":"0"}]]></criteria>
+        </aggregate>
+    </object>
+
+    <object class="blockConstructor" table="pb_constructors" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="chunk" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" null="false" default="0"/>
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1"/>
+
+        <field key="ab_templates" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="ab_parents" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="ab_resources" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="ab_class" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="ab_context" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+
+        <composite alias="Blocks" class="pageBlock" local="id" foreign="constructor_id" cardinality="many" owner="local"/>
+        <composite alias="Groups" class="blockFieldGroup" local="id" foreign="block_id" cardinality="many" owner="local"/>
+        <composite alias="Fields" class="blockField" local="id" foreign="block_id" cardinality="many" owner="local"/>
+        <composite alias="Collection" class="blockCollection" local="id" foreign="constructor_id" cardinality="many" owner="local"/>
+
+    </object>
+
+    <object class="blockTable" table="pb_tables" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" null="false" default="0"/>
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1"/>
+
+        <composite alias="Fields" class="blockField" local="id" foreign="table_id" cardinality="many" owner="local">
+            <criteria target="foreign"><![CDATA[{"block_id":"0"}]]></criteria>
+        </composite>
+        <composite alias="Columns" class="pbTableColumn" local="id" foreign="table_id" cardinality="many" owner="local"/>
+        <composite alias="Groups" class="blockFieldGroup" local="id" foreign="table_id" cardinality="many" owner="local"/>
+        <aggregate alias="Field" class="blockField" local="id" foreign="table_id" cardinality="one" owner="foreign">
+            <criteria target="foreign"><![CDATA[{"block_id:!=":"0"}]]></criteria>
+        </aggregate>
+    </object>
+
+    <object class="blockCollection" table="pb_collections" extends="xPDOSimpleObject">
+        <field key="constructor_id" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" />
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="btn_add" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="index" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" />
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1" index="index" />
+
+        <field key="ab_templates" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="ab_parents" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="ab_resources" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="ab_class" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="ab_context" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false"/>
+        </index>
+        <index alias="rank" name="rank" primary="false" unique="false" type="BTREE">
+            <column key="rank" length="" collation="A" null="false"/>
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false"/>
+        </index>
+
+        <composite alias="Columns" class="pbTableColumn" local="id" foreign="collection_id" cardinality="many" owner="local"/>
+        <aggregate alias="Constructor" class="blockConstructor" local="constructor_id" foreign="id" cardinality="one" owner="foreign"/>
+
+    </object>
+
+    <object class="blockField" table="pb_fields" extends="xPDOSimpleObject">
+        <field key="block_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+<!--        <field key="collection_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>-->
+        <field key="table_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="group_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="field_table_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="width" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="caption" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="help" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="xtype" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="values" dbtype="text" phptype="string" null="true" default=""/>
+        <field key="where" dbtype="text" phptype="string" null="true" default=""/>
+        <field key="number_allownegative" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+        <field key="number_minvalue" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="number_maxvalue" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="columns" dbtype="tinyint" precision="1" attributes="unsigned" phptype="integer" null="true" default="1"/>
+        <field key="default" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="combo" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="source" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="source_path" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="required" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="true" default="1"/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" />
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1" />
+
+        <composite alias="Files" class="blockFile" local="id" foreign="field_id" cardinality="many" owner="local"/>
+        <composite alias="Columns" class="pbTableColumn" local="id" foreign="field_id" cardinality="many" owner="local"/>
+        <aggregate alias="Block" class="pageBlock" local="block_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Constructor" class="blockConstructor" local="block_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Table" class="blockTable" local="field_table_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Group" class="blockFieldGroup" local="group_id" foreign="id" cardinality="one" owner="foreign"/>
+
+    </object>
+
+    <object class="blockFieldGroup" table="pb_field_groups" extends="xPDOSimpleObject">
+        <field key="block_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="table_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" null="false" default="0"/>
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1"/>
+
+        <aggregate alias="Constructor" class="blockConstructor" local="block_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Table" class="blockTable" local="table_id" foreign="id" cardinality="one" owner="foreign"/>
+        <composite alias="Fields" class="blockField" local="id" foreign="group_id" cardinality="many" owner="local"/>
+
+    </object>
+
+    <object class="pbTableColumn" table="pb_table_columns" extends="xPDOSimpleObject">
+        <field key="table_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="collection_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="field_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="width" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="100"/>
+        <field key="render" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="fixed" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0"/>
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1"/>
+
+        <aggregate alias="Table" class="blockTable" local="table_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Collection" class="blockCollection" local="collection_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Field" class="blockField" local="field_id" foreign="id" cardinality="one" owner="foreign"/>
+
+    </object>
+
+    <object class="blockTableValue" table="pb_table_values" extends="xPDOSimpleObject">
+        <field key="resource_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="context_key" dbtype="varchar" precision="100" phptype="string" null="false" default="web"/>
+        <field key="cultureKey" dbtype="varchar" precision="100" phptype="string" null="false" default="ru"/>
+        <field key="block_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="table_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="grid_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="field_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="values" dbtype="text" phptype="string" null="true" default=""/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1"/>
+
+        <composite alias="Files" class="blockFile" local="id" foreign="grid_id" cardinality="many" owner="foreign"/>
+        <composite alias="Videos" class="blockVideo" local="id" foreign="grid_id" cardinality="many" owner="foreign"/>
+        <composite alias="Grids" class="blockTableValue" local="id" foreign="grid_id" cardinality="many" owner="foreign"/>
+
+        <aggregate alias="Block" class="pageBlock" local="block_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Table" class="blockTable" local="table_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Fields" class="blockField" local="table_id" foreign="table_id" cardinality="many" owner="foreign"/>
+        <aggregate alias="Groups" class="blockFieldGroup" local="table_id" foreign="table_id" cardinality="many" owner="foreign"/>
+        <aggregate alias="Columns" class="pbTableColumn" local="table_id" foreign="table_id" cardinality="many" owner="foreign"/>
+        <aggregate alias="Field" class="blockField" local="field_id" foreign="id" cardinality="one" owner="foreign"/>
+
+    </object>
+
+    <object class="blockFile" table="pb_block_files" extends="xPDOSimpleObject">
+        <field key="resource_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="context_key" dbtype="varchar" precision="100" phptype="string" null="false" default="web"/>
+        <field key="cultureKey" dbtype="varchar" precision="100" phptype="string" null="false" default="ru"/>
+        <field key="block_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="field_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="grid_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="path" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="filename" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="extension" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="title" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="description" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="url" dbtype="varchar" precision="255" phptype="string" null="false"/>
+        <field key="type" dbtype="varchar" precision="100" phptype="string" null="true"/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" null="false" default="0"/>
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1"/>
+
+        <aggregate alias="Block" class="pageBlock" local="block_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Field" class="blockField" local="field_id" foreign="id" cardinality="one" owner="foreign"/>
+
+    </object>
+
+    <object class="blockVideo" table="pb_block_videos" extends="xPDOSimpleObject">
+        <field key="resource_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="context_key" dbtype="varchar" precision="100" phptype="string" null="false" default="web"/>
+        <field key="cultureKey" dbtype="varchar" precision="100" phptype="string" null="false" default="ru"/>
+        <field key="block_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="field_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="grid_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="path" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="provider" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="title" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="description" dbtype="text" phptype="string" null="true" default=""/>
+        <field key="thumbnail" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="thumbnail_width" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="thumbnail_height" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="video" dbtype="varchar" precision="100" phptype="string" null="true"/>
+        <field key="embed_video" dbtype="varchar" precision="100" phptype="string" null="true"/>
+        <field key="video_id" dbtype="varchar" precision="100" phptype="string" null="true"/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" null="false" default="0"/>
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1"/>
+
+        <aggregate alias="Block" class="pageBlock" local="block_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Field" class="blockField" local="field_id" foreign="id" cardinality="one" owner="foreign"/>
+
+    </object>
+
+    <object class="pbResourceColumn" table="pb_resource_columns" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="xtype" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+    </object>
+
+    <object class="pbVersion" table="pb_version_blocks" extends="xPDOSimpleObject">
+        <field key="resource_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0" index="index"/>
+        <field key="context_key" dbtype="varchar" precision="100" phptype="string" null="false" default="web" index="index" />
+        <field key="cultureKey" dbtype="varchar" precision="100" phptype="string" null="false" default="ru" index="index" />
+        <field key="constructor_id" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="collection_id" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="object_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0" index="index"/>
+        <field key="chunk" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index"/>
+        <field key="values" dbtype="mediumtext" phptype="string" null="true" default=""/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1" index="index" />
+        <field key="baseblock" dbtype="smallint" precision="10" phptype="integer" null="false" default="0" index="index" />
+        <field key="unique" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
+
+        <field key="block_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0" index="index"/>
+        <field key="saved" dbtype="timestamp" phptype="timestamp" null="false" default="CURRENT_TIMESTAMP"/>
+        <field key="user" dbtype="int" precision="11" phptype="integer" null="false" default="0" index="fk"/>
+        <field key="mode" dbtype="varchar" precision="24" phptype="string" null="false" default="update"/>
+        <field key="deleted" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" />
+        <field key="deletedon" dbtype="int" precision="20" phptype="timestamp" null="false" default="0" />
+        <field key="deletedby" dbtype="int" precision="10" phptype="integer" null="false" default="0" />
+
+        <index alias="block_id" name="block_id" primary="false" unique="false" type="BTREE">
+            <column key="block_id" length="" collation="A" null="false"/>
+        </index>
+
+        <composite alias="Tables" class="pbVersionTableValue" local="id" foreign="version_id" cardinality="many" owner="local"/>
+        <composite alias="Files" class="pbVersionFile" local="id" foreign="version_id" cardinality="many" owner="local"/>
+        <composite alias="Videos" class="pbVersionVideo" local="id" foreign="version_id" cardinality="many" owner="local"/>
+
+        <aggregate alias="User" class="modUser" local="user" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Constructor" class="blockConstructor" local="constructor_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Collection" class="blockCollection" local="collection_id" foreign="id" cardinality="one" owner="foreign"/>
+    </object>
+
+    <object class="pbVersionTableValue" table="pb_version_table_values" extends="xPDOSimpleObject">
+        <field key="version_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="version_table_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="resource_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="context_key" dbtype="varchar" precision="100" phptype="string" null="false" default="web"/>
+        <field key="cultureKey" dbtype="varchar" precision="100" phptype="string" null="false" default="ru"/>
+        <field key="block_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="table_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="grid_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="field_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="values" dbtype="text" phptype="string" null="true" default=""/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1"/>
+
+        <index alias="version_id" name="version_id" primary="false" unique="false" type="BTREE">
+            <column key="version_id" length="" collation="A" null="false"/>
+        </index>
+
+        <composite alias="Files" class="blockFile" local="id" foreign="grid_id" cardinality="many" owner="foreign"/>
+        <composite alias="Videos" class="blockVideo" local="id" foreign="grid_id" cardinality="many" owner="foreign"/>
+        <composite alias="Grids" class="blockTableValue" local="id" foreign="grid_id" cardinality="many" owner="foreign"/>
+
+        <aggregate alias="Block" class="pageBlock" local="block_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Table" class="blockTable" local="table_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Fields" class="blockField" local="table_id" foreign="table_id" cardinality="many" owner="foreign"/>
+        <aggregate alias="Groups" class="blockFieldGroup" local="table_id" foreign="table_id" cardinality="many" owner="foreign"/>
+        <aggregate alias="Columns" class="pbTableColumn" local="table_id" foreign="table_id" cardinality="many" owner="foreign"/>
+        <aggregate alias="Field" class="blockField" local="field_id" foreign="id" cardinality="one" owner="foreign"/>
+
+    </object>
+
+    <object class="pbVersionFile" table="pb_version_files" extends="xPDOSimpleObject">
+        <field key="version_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="resource_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="context_key" dbtype="varchar" precision="100" phptype="string" null="false" default="web"/>
+        <field key="cultureKey" dbtype="varchar" precision="100" phptype="string" null="false" default="ru"/>
+        <field key="block_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="field_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="grid_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="path" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="filename" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="extension" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="name" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="title" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="description" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="url" dbtype="varchar" precision="255" phptype="string" null="false"/>
+        <field key="type" dbtype="varchar" precision="100" phptype="string" null="true"/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" null="false" default="0"/>
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1"/>
+
+        <index alias="version_id" name="version_id" primary="false" unique="false" type="BTREE">
+            <column key="version_id" length="" collation="A" null="false"/>
+        </index>
+
+        <aggregate alias="Block" class="pageBlock" local="block_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Field" class="blockField" local="field_id" foreign="id" cardinality="one" owner="foreign"/>
+
+    </object>
+
+    <object class="pbVersionVideo" table="pb_version_videos" extends="xPDOSimpleObject">
+        <field key="version_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="resource_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="false" default="0"/>
+        <field key="context_key" dbtype="varchar" precision="100" phptype="string" null="false" default="web"/>
+        <field key="cultureKey" dbtype="varchar" precision="100" phptype="string" null="false" default="ru"/>
+        <field key="block_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="field_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="grid_id" dbtype="smallint" precision="10" phptype="integer" attributes="unsigned" null="true" default="0"/>
+        <field key="path" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="provider" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="title" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="description" dbtype="text" phptype="string" null="true" default=""/>
+        <field key="thumbnail" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="thumbnail_width" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="thumbnail_height" dbtype="varchar" precision="255" phptype="string" null="true" default=""/>
+        <field key="video" dbtype="varchar" precision="100" phptype="string" null="true"/>
+        <field key="embed_video" dbtype="varchar" precision="100" phptype="string" null="true"/>
+        <field key="video_id" dbtype="varchar" precision="100" phptype="string" null="true"/>
+        <field key="rank" dbtype="smallint" precision="10" phptype="integer" null="false" default="0"/>
+        <field key="active" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="1"/>
+
+        <index alias="version_id" name="version_id" primary="false" unique="false" type="BTREE">
+            <column key="version_id" length="" collation="A" null="false"/>
+        </index>
+
+        <aggregate alias="Block" class="pageBlock" local="block_id" foreign="id" cardinality="one" owner="foreign"/>
+        <aggregate alias="Field" class="blockField" local="field_id" foreign="id" cardinality="one" owner="foreign"/>
+
+    </object>
+
+</model>

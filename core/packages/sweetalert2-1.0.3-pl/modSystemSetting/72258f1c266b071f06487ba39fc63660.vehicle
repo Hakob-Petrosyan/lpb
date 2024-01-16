@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => true,
+  'related_objects' => false,
+  'namespace' => 'sweetalert2',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'd56469e310e40d1aeed48facfae0cf76',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '72258f1c266b071f06487ba39fc63660',
+  'native_key' => 'swal2_office',
+  'object' => '{"key":"swal2_office","value":true,"xtype":"combo-boolean","namespace":"sweetalert2","area":"swal2_packages","editedon":null,"name":"setting_swal2_office"}',
+);

@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'ckeditor',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '3dd00a679ed0f20e839995d7d6d207da',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '138058b7590e661511dbe19051e6040d',
+  'native_key' => 'ckeditor.object_resizing',
+  'object' => '{"key":"ckeditor.object_resizing","value":"0","xtype":"combo-boolean","namespace":"ckeditor","area":"general","editedon":null}',
+);

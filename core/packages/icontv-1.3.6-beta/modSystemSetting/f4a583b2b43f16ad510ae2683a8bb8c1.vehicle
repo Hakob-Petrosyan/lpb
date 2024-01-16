@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'icontv',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'b20982bc37e797007f04fd1f85a46d3c',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'f4a583b2b43f16ad510ae2683a8bb8c1',
+  'native_key' => 'icontv.generate.template',
+  'object' => '{"key":"icontv.generate.template","value":1,"xtype":"combo-boolean","namespace":"icontv","area":"icontv.main","editedon":null,"lexicon":"icontv:default"}',
+);

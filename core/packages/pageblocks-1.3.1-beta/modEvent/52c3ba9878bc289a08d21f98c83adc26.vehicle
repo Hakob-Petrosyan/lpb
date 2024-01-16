@@ -1,0 +1,15 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => 'BUILD_EVENT_UPDATE',
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'd3b85babd7343c1197953794edefe9fd',
+  'package' => 'modx',
+  'class' => 'modEvent',
+  'signature' => '52c3ba9878bc289a08d21f98c83adc26',
+  'native_key' => 'pbAfterRemoveBlock',
+  'object' => '{"name":"pbAfterRemoveBlock","service":6,"groupname":"PageBlocks"}',
+);

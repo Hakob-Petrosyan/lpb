@@ -1,0 +1,35 @@
+<?php return array (
+  'class' => 'xPDOFileVehicle',
+  'object' => 
+  array (
+    'source' => 'mscolorpicker-1.0.0-pl/xPDOFileVehicle/f121c9fb905805d61d7e891e4368bc47/',
+    'target' => 'return MODX_CORE_PATH . \'components/\';',
+    'name' => 'mscolorpicker',
+  ),
+  'vehicle_class' => 'xPDOFileVehicle',
+  'namespace' => 'mscolorpicker',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"mscolorpicker-1.0.0-pl\\/xPDOFileVehicle\\/f121c9fb905805d61d7e891e4368bc47\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"mscolorpicker"}',
+    ),
+    1 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"mscolorpicker-1.0.0-pl\\/xPDOFileVehicle\\/f121c9fb905805d61d7e891e4368bc47.resolve.plugin.resolver","type":"php","name":"resolve.plugin"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"mscolorpicker-1.0.0-pl\\/xPDOFileVehicle\\/f121c9fb905805d61d7e891e4368bc47.resolve.lexicon.resolver","type":"php","name":"resolve.lexicon"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'guid' => 'ca64caa3ee4787c44632cdcbc251e595',
+  'package' => '',
+  'signature' => 'f121c9fb905805d61d7e891e4368bc47',
+  'native_key' => 'ca64caa3ee4787c44632cdcbc251e595',
+);

@@ -1,0 +1,15 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => 'BUILD_EVENT_UPDATE',
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '15e216422272e6f00774cd555ee88c85',
+  'package' => 'modx',
+  'class' => 'modEvent',
+  'signature' => '619eaa9a57d35d039d0c14be05fcb682',
+  'native_key' => 'pbAfterSaveImage',
+  'object' => '{"name":"pbAfterSaveImage","service":6,"groupname":"PageBlocks"}',
+);

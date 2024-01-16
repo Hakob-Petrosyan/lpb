@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'dbe4f423fadf35b61fcd3ea928487695',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'a1a3dc17465e8651c0b4ceb86d15562e',
+  'native_key' => 'pageblocks_limit',
+  'object' => '{"key":"pageblocks_limit","value":20,"xtype":"numberfield","namespace":"pageblocks","area":"pageblocks_main","editedon":null,"name":"setting_pageblocks_limit"}',
+);

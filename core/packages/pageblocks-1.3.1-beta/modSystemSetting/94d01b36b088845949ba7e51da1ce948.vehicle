@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'b86f9694efcd250b7804ee4127223097',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '94d01b36b088845949ba7e51da1ce948',
+  'native_key' => 'pageblocks_vimeo_api_key',
+  'object' => '{"key":"pageblocks_vimeo_api_key","value":"","xtype":"textfield","namespace":"pageblocks","area":"pageblocks_video","editedon":null,"name":"setting_pageblocks_vimeo_api_key"}',
+);

@@ -1,0 +1,208 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Plugins' => 
+    array (
+      '25cfd105de377968464ebbdfe8c442fa' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":1,"property_preprocess":0,"name":"modDevTools","description":"","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\r\\n * modDevTools\\r\\n *\\r\\n * Copyright 2014 by Vitaly Kireev <kireevvit@gmail.com>\\r\\n *\\r\\n * @package moddevtools\\r\\n *\\r\\n * @var modX $modx\\r\\n * @var int $id\\r\\n * @var string $mode\\r\\n *\\/\\r\\n\\r\\n\\/**\\r\\n * @var modx $modx\\r\\n *\\/\\r\\n$path = $modx->getOption(\'moddevtools_core_path\',null,$modx->getOption(\'core_path\').\'components\\/moddevtools\\/\').\'model\\/moddevtools\\/\';\\r\\n\\/**\\r\\n * @var modDevTools $devTools\\r\\n *\\/\\r\\n$devTools = $modx->getService(\'devTools\',\'modDevTools\',$path);\\r\\n$eventName = $modx->event->name;\\r\\n\\r\\nswitch($eventName) {\\r\\n    case \'OnDocFormSave\':\\r\\n        $devTools->debug(\'Start OnDocFormSave\');\\r\\n        $devTools->parseContent($resource);\\r\\n        break;\\r\\n    case \'OnTempFormSave\':\\r\\n        $devTools->debug(\'Start OnTempFormSave\');\\r\\n        $devTools->parseContent($template);\\r\\n        break;\\r\\n    case \'OnTVFormSave\':\\r\\n\\r\\n        break;\\r\\n    case \'OnChunkFormSave\':\\r\\n        $devTools->debug(\'Start OnChunkFormSave\');\\r\\n        $devTools->parseContent($chunk);\\r\\n\\r\\n        $parent = $modx->getOption(\'parent\', $_REQUEST);\\r\\n        $link_type = $modx->getOption(\'link_type\', $_REQUEST);\\r\\n        $devTools->parseParent($parent, $link_type);\\r\\n        break;\\r\\n    case \'OnSnipFormSave\':\\r\\n\\r\\n        break;\\r\\n    \\/* Add tabs *\\/\\r\\n    case \'OnDocFormPrerender\':\\r\\n        if ($modx->event->name == \'OnDocFormPrerender\') {\\r\\n            $devTools->getBreadCrumbs($scriptProperties);\\r\\n            $devTools->showTemplate($scriptProperties);\\r\\n            return;\\r\\n        }\\r\\n        break;\\r\\n\\r\\n    case \'OnTempFormPrerender\':\\r\\n        if ($mode == modSystemEvent::MODE_UPD) {\\r\\n            $result = $devTools->outputTab(\'Template\');\\r\\n        }\\r\\n        break;\\r\\n\\r\\n    case \'OnTVFormPrerender\':\\r\\n        break;\\r\\n\\r\\n\\r\\n    case \'OnChunkFormPrerender\':\\r\\n        if ($mode == modSystemEvent::MODE_UPD) {\\r\\n            $result = $devTools->outputTab(\'Chunk\');\\r\\n        }\\r\\n        break;\\r\\n\\r\\n    case \'OnSnipFormPrerender\':\\r\\n        if ($mode == modSystemEvent::MODE_UPD) {\\r\\n            $result = $devTools->outputTab(\'Snippet\');\\r\\n        }\\r\\n        break;\\r\\n\\r\\n\\r\\n}\\r\\n\\r\\nif (isset($result) && $result === true)\\r\\n    return;\\r\\nelseif (isset($result)) {\\r\\n    $modx->log(modX::LOG_LEVEL_ERROR,\'[modDevTools] An error occured. Event: \'.$eventName.\' - Error: \'.($result === false) ? \'undefined error\' : $result);\\r\\n    return;\\r\\n}","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"core\\/components\\/moddevtools\\/elements\\/plugins\\/plugin.moddevtools.php","content":"\\/**\\r\\n * modDevTools\\r\\n *\\r\\n * Copyright 2014 by Vitaly Kireev <kireevvit@gmail.com>\\r\\n *\\r\\n * @package moddevtools\\r\\n *\\r\\n * @var modX $modx\\r\\n * @var int $id\\r\\n * @var string $mode\\r\\n *\\/\\r\\n\\r\\n\\/**\\r\\n * @var modx $modx\\r\\n *\\/\\r\\n$path = $modx->getOption(\'moddevtools_core_path\',null,$modx->getOption(\'core_path\').\'components\\/moddevtools\\/\').\'model\\/moddevtools\\/\';\\r\\n\\/**\\r\\n * @var modDevTools $devTools\\r\\n *\\/\\r\\n$devTools = $modx->getService(\'devTools\',\'modDevTools\',$path);\\r\\n$eventName = $modx->event->name;\\r\\n\\r\\nswitch($eventName) {\\r\\n    case \'OnDocFormSave\':\\r\\n        $devTools->debug(\'Start OnDocFormSave\');\\r\\n        $devTools->parseContent($resource);\\r\\n        break;\\r\\n    case \'OnTempFormSave\':\\r\\n        $devTools->debug(\'Start OnTempFormSave\');\\r\\n        $devTools->parseContent($template);\\r\\n        break;\\r\\n    case \'OnTVFormSave\':\\r\\n\\r\\n        break;\\r\\n    case \'OnChunkFormSave\':\\r\\n        $devTools->debug(\'Start OnChunkFormSave\');\\r\\n        $devTools->parseContent($chunk);\\r\\n\\r\\n        $parent = $modx->getOption(\'parent\', $_REQUEST);\\r\\n        $link_type = $modx->getOption(\'link_type\', $_REQUEST);\\r\\n        $devTools->parseParent($parent, $link_type);\\r\\n        break;\\r\\n    case \'OnSnipFormSave\':\\r\\n\\r\\n        break;\\r\\n    \\/* Add tabs *\\/\\r\\n    case \'OnDocFormPrerender\':\\r\\n        if ($modx->event->name == \'OnDocFormPrerender\') {\\r\\n            $devTools->getBreadCrumbs($scriptProperties);\\r\\n            $devTools->showTemplate($scriptProperties);\\r\\n            return;\\r\\n        }\\r\\n        break;\\r\\n\\r\\n    case \'OnTempFormPrerender\':\\r\\n        if ($mode == modSystemEvent::MODE_UPD) {\\r\\n            $result = $devTools->outputTab(\'Template\');\\r\\n        }\\r\\n        break;\\r\\n\\r\\n    case \'OnTVFormPrerender\':\\r\\n        break;\\r\\n\\r\\n\\r\\n    case \'OnChunkFormPrerender\':\\r\\n        if ($mode == modSystemEvent::MODE_UPD) {\\r\\n            $result = $devTools->outputTab(\'Chunk\');\\r\\n        }\\r\\n        break;\\r\\n\\r\\n    case \'OnSnipFormPrerender\':\\r\\n        if ($mode == modSystemEvent::MODE_UPD) {\\r\\n            $result = $devTools->outputTab(\'Snippet\');\\r\\n        }\\r\\n        break;\\r\\n\\r\\n\\r\\n}\\r\\n\\r\\nif (isset($result) && $result === true)\\r\\n    return;\\r\\nelseif (isset($result)) {\\r\\n    $modx->log(modX::LOG_LEVEL_ERROR,\'[modDevTools] An error occured. Event: \'.$eventName.\' - Error: \'.($result === false) ? \'undefined error\' : $result);\\r\\n    return;\\r\\n}"}',
+        'guid' => '28324e02a6d71c9141ff91a415a68fcd',
+        'native_key' => NULL,
+        'signature' => '2113b10fff9806531dc9b209c2780604',
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            '4cea6c57da2b83952783405b5f305bfb' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTempFormPrerender","priority":0,"propertyset":0}',
+              'guid' => '0f1cb3ecfd44b15fd0c3c98e2164c145',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTempFormPrerender',
+              ),
+              'signature' => 'c3643df9cc770f32a54e9d76bbab5027',
+            ),
+            '6acf2283ca00e27393495bd1a617772b' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnDocFormPrerender","priority":0,"propertyset":0}',
+              'guid' => '80dcf50ea6d7a4185adb99edf276c2b1',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnDocFormPrerender',
+              ),
+              'signature' => '95a8634bb6307c1a0727227d9d4c84e7',
+            ),
+            '0a22143c9258a91b22c2cd19ff85dde7' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnChunkFormPrerender","priority":0,"propertyset":0}',
+              'guid' => 'b098b19dc60fb33df0c50d09eef1a876',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnChunkFormPrerender',
+              ),
+              'signature' => 'a27ddec13b1486a7fd8790cbfb2b0bf9',
+            ),
+            'c5cabcc81962ea693835130d43b15873' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnSnipFormPrerender","priority":0,"propertyset":0}',
+              'guid' => '1a2e15134c39ed95a6c78c93386fde07',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnSnipFormPrerender',
+              ),
+              'signature' => '9b2334b25ef90818692a3d4f6057c5f4',
+            ),
+            'dd73aa7bb1afb5d4567b7e3d03ad98f6' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTempFormSave","priority":0,"propertyset":0}',
+              'guid' => 'f76e3cb3c158b5c261748ff1f7c3c3a6',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTempFormSave',
+              ),
+              'signature' => '4edae9962bb35b12e7e9f03e7d71869d',
+            ),
+            '53c34d66d001af9c852f53378883f8d4' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnDocFormSave","priority":0,"propertyset":0}',
+              'guid' => '58cff1b167f734691cab075d715ed456',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnDocFormSave',
+              ),
+              'signature' => 'e1c060cb0c0f978af6d7133c7428302a',
+            ),
+            '0d0353917d69321e1a21377a699a7cb3' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnChunkFormSave","priority":0,"propertyset":0}',
+              'guid' => 'dccb80cc4e478e41dd1e8180b8030148',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnChunkFormSave',
+              ),
+              'signature' => '8b40788afcaa6f97666b79bb2a5cb18f',
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Plugins' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'moddevtools',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"moddevtools-1.2.1-pl\\/modCategory\\/e057e3ae5a9e23284edf8770a9e62667\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"moddevtools"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"moddevtools-1.2.1-pl\\/modCategory\\/e057e3ae5a9e23284edf8770a9e62667\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"moddevtools"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"moddevtools-1.2.1-pl\\/modCategory\\/e057e3ae5a9e23284edf8770a9e62667.resolve.tables.resolver","type":"php","name":"resolve.tables"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '933ea435e1939a70c88c59781cfd82a4',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => 'e057e3ae5a9e23284edf8770a9e62667',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"modDevTools"}',
+);

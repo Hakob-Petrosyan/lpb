@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'icontv',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'ace7eca53dec8249d253c771b85b5932',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '464a91e606bd652eaefdb60402051fce',
+  'native_key' => 'icontv.path.config',
+  'object' => '{"key":"icontv.path.config","value":"core\\/components\\/icontv\\/elements\\/config\\/","xtype":"textfield","namespace":"icontv","area":"icontv.path","editedon":null,"lexicon":"icontv:default"}',
+);

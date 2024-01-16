@@ -1,0 +1,38 @@
+/*label{*/
+/*  color:#000;*/
+/*  font-weight:500;*/
+/*  background:#fff;*/
+/*  margin-bottom:5px;*/
+/*  padding:4px;*/
+/*  border-radius:4px;*/
+/*}*/
+input{
+  margin-bottom:10px
+}
+/*.sub-bg {
+		background: url('https://the-french.co.uk/wp-content/uploads/2018/02/111-400x600.jpg')no-repeat;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		}
+		.subs-header{
+		padding-top: 0px;
+		border-bottom: 0px;
+		}
+		.heading-text h4{
+		color: #fff;
+		padding: 20px;
+		border: 2px solid #d3d3d3;
+		display: inline-block;
+		border-radius: 20px;
+		box-shadow: inset 10px 12px 13px -7px rgba(0,0,0,0.7);
+		-moz-box-shadow: inset 10px 12px 13px -7px rgba(0,0,0,0.7);
+		-webkit-box-shadow: inset 10px 12px 13px -7px rgba(0,0,0,0.7);
+		-o-box-shadow: inset 10px 12px 13px -7px rgba(0,0,0,0.7);
+		}
+		.heading-text{
+		margin-top: 10px;
+	}*/
+.close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover {
+    outline: none;
+}

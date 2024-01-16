@@ -1,0 +1,17 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => true,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'e38d0e9fa3ef999b8d04e12f9895bcb8',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => '252548952509eac449b8236aab986206',
+  'native_key' => 'pb_baseblocks',
+  'object' => '{"text":"pb_baseblocks","parent":"pageblocks","action":"home","description":"pb_menu_desc","icon":"","menuindex":1,"params":"","handler":"","permissions":"","namespace":"pageblocks"}',
+);

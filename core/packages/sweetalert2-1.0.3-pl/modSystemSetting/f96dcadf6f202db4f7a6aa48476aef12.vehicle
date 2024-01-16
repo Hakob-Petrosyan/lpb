@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => true,
+  'related_objects' => false,
+  'namespace' => 'sweetalert2',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'efa611b545226e6eebd505cea13bb257',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'f96dcadf6f202db4f7a6aa48476aef12',
+  'native_key' => 'swal2_msoneclick',
+  'object' => '{"key":"swal2_msoneclick","value":true,"xtype":"combo-boolean","namespace":"sweetalert2","area":"swal2_packages","editedon":null,"name":"setting_swal2_msoneclick"}',
+);

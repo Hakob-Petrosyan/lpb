@@ -1,0 +1,220 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Plugins' => 
+    array (
+      '298744b937761dd3aeeecc32583fb293' => 
+      array (
+        'unique_key' => 'name',
+        'preserve_keys' => false,
+        'update_object' => true,
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'abe0450cb2c81e6b079940955ad6e6e8' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnManagerPageBeforeRender","priority":0,"propertyset":0}',
+              'guid' => '4cb3ddc71cdd57e6857efc1bb54918f1',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnManagerPageBeforeRender',
+              ),
+              'signature' => '2803c883dbcc0e06cbb5907887489fdc',
+            ),
+            '468f531e805d24aec1c749d940c63195' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTVInputRenderList","priority":0,"propertyset":0}',
+              'guid' => '56376b29d5cbed7ff4afb34b03fbd71a',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTVInputRenderList',
+              ),
+              'signature' => '20533cb4f39dd4324ea919f62d7bd4e8',
+            ),
+            '7d94360c05a91483a81d745388a73f0d' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTVOutputRenderList","priority":0,"propertyset":0}',
+              'guid' => '4eebda559137c89a02e082dcfa690595',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTVOutputRenderList',
+              ),
+              'signature' => 'b3d376cdda4f544b12370efc883b6a42',
+            ),
+            '6177686a23b9047c5b7e4b56f37587dc' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTVInputPropertiesList","priority":0,"propertyset":0}',
+              'guid' => 'e3217c14bbda6540bfda1795a9f2fe14',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTVInputPropertiesList',
+              ),
+              'signature' => '8b124583550631d03a08f4f67c918fd2',
+            ),
+            '8f8b110016d5ae5b3122f030dcebd422' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTVOutputRenderPropertiesList","priority":0,"propertyset":0}',
+              'guid' => '93bfa7b8d56e1d507cd125696b0a0c02',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTVOutputRenderPropertiesList',
+              ),
+              'signature' => '7013e85e05192df76857418552336a93',
+            ),
+            'b970c786d78190df65f2a6b4c21ab20c' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnDocFormRender","priority":0,"propertyset":0}',
+              'guid' => '748fe7889246047908672f2a2581faf2',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnDocFormRender',
+              ),
+              'signature' => 'ae98b5daa4622f95a680d3fc0af263ff',
+            ),
+            '751765c2096a1aef611c15cbc159170f' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTempFormRender","priority":0,"propertyset":0}',
+              'guid' => '23e8c0528220f72453cce936ceaa8ab7',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTempFormRender',
+              ),
+              'signature' => 'bcba0a043a52bfe19cdd17c0b1b47bc7',
+            ),
+          ),
+        ),
+        'related_object_attributes' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'preserve_keys' => true,
+            'update_object' => true,
+            'unique_key' => 
+            array (
+              0 => 'pluginid',
+              1 => 'event',
+            ),
+          ),
+        ),
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":1,"property_preprocess":0,"name":"icontv","description":"","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\n * IconTv Runtime Hooks\\n *\\n * Registers custom TV input & output types and includes javascripts on document\\n * edit pages so that the TV can be used from within other extras (i.e. MIGX,\\n * Collections)\\n *\\n * @package icontv\\n * @subpackage plugin\\n *\\n *\\n * @event OnManagerPageBeforeRender\\n * @event OnTVInputRenderList\\n * @event OnTVOutputRenderList\\n * @event OnTVInputPropertiesList\\n * @event OnTVOutputRenderPropertiesList\\n * @event OnDocFormRender\\n *\\n * @var modX $modx\\n *\\/\\n$corePath = $modx->getOption(\'core_path\', null, MODX_CORE_PATH) . \'components\\/icontv\\/\';\\n\\/** @var IconTv $icontv *\\/\\n$icontv = $modx->getService(\\n    \'icontv\',\\n    \'IconTv\',\\n    $corePath . \'model\\/icontv\\/\',\\n    array(\\n        \'core_path\' => $corePath\\n    )\\n);\\n\\nswitch ($modx->event->name) {\\n    case \'OnManagerPageBeforeRender\':\\n        $modx->controller->addLexiconTopic(\'icontv:default\');\\n        \\/\\/$icontv->includeScriptAssets();\\n        break;\\n    case \'OnTVInputRenderList\':\\n        $modx->event->output($corePath . \'elements\\/tv\\/input\\/\');\\n        break;\\n    case \'OnTVOutputRenderList\':\\n        $modx->event->output($corePath . \'elements\\/tv\\/output\\/\');\\n        break;\\n    case \'OnTVInputPropertiesList\':\\n        $modx->event->output($corePath . \'elements\\/tv\\/inputoptions\\/\');\\n        break;\\n    case \'OnTVOutputRenderPropertiesList\':\\n        $modx->event->output($corePath . \'elements\\/tv\\/output\\/options\\/\');\\n        break;\\n    case \'OnDocFormRender\':\\n        $icontv->includeScriptAssets();\\n        break;\\n    case \'OnTempFormRender\':\\n        $icontv->includeScriptAssets();\\n        $icontv->includeInTemplate();\\n        break;\\n}","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"core\\/components\\/icontv\\/elements\\/plugins\\/icontv.plugin.php","content":"\\/**\\n * IconTv Runtime Hooks\\n *\\n * Registers custom TV input & output types and includes javascripts on document\\n * edit pages so that the TV can be used from within other extras (i.e. MIGX,\\n * Collections)\\n *\\n * @package icontv\\n * @subpackage plugin\\n *\\n *\\n * @event OnManagerPageBeforeRender\\n * @event OnTVInputRenderList\\n * @event OnTVOutputRenderList\\n * @event OnTVInputPropertiesList\\n * @event OnTVOutputRenderPropertiesList\\n * @event OnDocFormRender\\n *\\n * @var modX $modx\\n *\\/\\n$corePath = $modx->getOption(\'core_path\', null, MODX_CORE_PATH) . \'components\\/icontv\\/\';\\n\\/** @var IconTv $icontv *\\/\\n$icontv = $modx->getService(\\n    \'icontv\',\\n    \'IconTv\',\\n    $corePath . \'model\\/icontv\\/\',\\n    array(\\n        \'core_path\' => $corePath\\n    )\\n);\\n\\nswitch ($modx->event->name) {\\n    case \'OnManagerPageBeforeRender\':\\n        $modx->controller->addLexiconTopic(\'icontv:default\');\\n        \\/\\/$icontv->includeScriptAssets();\\n        break;\\n    case \'OnTVInputRenderList\':\\n        $modx->event->output($corePath . \'elements\\/tv\\/input\\/\');\\n        break;\\n    case \'OnTVOutputRenderList\':\\n        $modx->event->output($corePath . \'elements\\/tv\\/output\\/\');\\n        break;\\n    case \'OnTVInputPropertiesList\':\\n        $modx->event->output($corePath . \'elements\\/tv\\/inputoptions\\/\');\\n        break;\\n    case \'OnTVOutputRenderPropertiesList\':\\n        $modx->event->output($corePath . \'elements\\/tv\\/output\\/options\\/\');\\n        break;\\n    case \'OnDocFormRender\':\\n        $icontv->includeScriptAssets();\\n        break;\\n    case \'OnTempFormRender\':\\n        $icontv->includeScriptAssets();\\n        $icontv->includeInTemplate();\\n        break;\\n}","file":"icontv.plugin","events":{"OnManagerPageBeforeRender":[],"OnTVInputRenderList":[],"OnTVOutputRenderList":[],"OnTVInputPropertiesList":[],"OnTVOutputRenderPropertiesList":[],"OnDocFormRender":[],"OnTempFormRender":[]}}',
+        'guid' => 'd3de42941d9b77a98af9378c9b07dffe',
+        'native_key' => NULL,
+        'signature' => '63eba77f848dbf80b7247ce012e1126a',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Plugins' => 
+    array (
+      'unique_key' => 'name',
+      'preserve_keys' => false,
+      'update_object' => true,
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'PluginEvents' => 
+        array (
+          'preserve_keys' => true,
+          'update_object' => true,
+          'unique_key' => 
+          array (
+            0 => 'pluginid',
+            1 => 'event',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'icontv',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"icontv-1.3.6-beta\\/modCategory\\/62870210172a76dc2e3fd0f5c6303a3c\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"icontv"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"icontv-1.3.6-beta\\/modCategory\\/62870210172a76dc2e3fd0f5c6303a3c\\/1\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"icontv"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '61c5a07fe6d11b0b053201aa11fd4203',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '62870210172a76dc2e3fd0f5c6303a3c',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"iconTV","rank":0}',
+);

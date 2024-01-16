@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '345f4929f6aa38fc1f55b014bb678b60',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '211174824b39f0d67264e87a51892694',
+  'native_key' => 'pageblocks_remove_chunk',
+  'object' => '{"key":"pageblocks_remove_chunk","value":true,"xtype":"combo-boolean","namespace":"pageblocks","area":"pageblocks_chunk","editedon":null,"name":"setting_pageblocks_remove_chunk"}',
+);

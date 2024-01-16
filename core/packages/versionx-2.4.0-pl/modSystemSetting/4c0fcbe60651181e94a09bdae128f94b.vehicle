@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'versionx',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'caaedd63e677c7af24189a9dc08c899c',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '4c0fcbe60651181e94a09bdae128f94b',
+  'native_key' => 'versionx.enable.resources',
+  'object' => '{"key":"versionx.enable.resources","value":true,"xtype":"combo-boolean","namespace":"versionx","area":"enable","editedon":null}',
+);

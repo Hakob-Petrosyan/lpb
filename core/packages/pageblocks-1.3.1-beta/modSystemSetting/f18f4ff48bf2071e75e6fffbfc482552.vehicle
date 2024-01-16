@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '558a8a1d561a38b53a886ed487a1ce32',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'f18f4ff48bf2071e75e6fffbfc482552',
+  'native_key' => 'pageblocks_paging',
+  'object' => '{"key":"pageblocks_paging","value":true,"xtype":"combo-boolean","namespace":"pageblocks","area":"pageblocks_main","editedon":null,"name":"setting_pageblocks_paging"}',
+);

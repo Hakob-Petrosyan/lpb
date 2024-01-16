@@ -1,0 +1,15 @@
+<?php return array (
+  'class' => 'xPDOScriptVehicle',
+  'object' => 
+  array (
+    'source' => 'pageblocks-1.3.1-beta/xPDOScriptVehicle/5d11a7b78500565cce770059c5705e35._encryption.script',
+  ),
+  'vehicle_class' => 'xPDOScriptVehicle',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'guid' => 'be522e36eaf581c4b46dd624a6450f6f',
+  'package' => '',
+  'signature' => '5d11a7b78500565cce770059c5705e35',
+  'native_key' => 'be522e36eaf581c4b46dd624a6450f6f',
+);

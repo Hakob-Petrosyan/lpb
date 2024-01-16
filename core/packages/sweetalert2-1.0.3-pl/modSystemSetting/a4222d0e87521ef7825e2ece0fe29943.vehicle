@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => true,
+  'related_objects' => false,
+  'namespace' => 'sweetalert2',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '0b9b2584dd213d0d288b9d5b04a647f1',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'a4222d0e87521ef7825e2ece0fe29943',
+  'native_key' => 'swal2_frontend_css',
+  'object' => '{"key":"swal2_frontend_css","value":"","xtype":"textfield","namespace":"sweetalert2","area":"swal2_frontend","editedon":null,"name":"setting_swal2_frontend_css"}',
+);

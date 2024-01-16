@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'icontv',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '56841c1011b13e0d3052fa105c81cde4',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '5ec5b0c368db796968e931f3c0f95b87',
+  'native_key' => 'icontv.path.svg',
+  'object' => '{"key":"icontv.path.svg","value":"[[++assets_url]]components\\/icontv\\/svg\\/","xtype":"textfield","namespace":"icontv","area":"icontv.path","editedon":null,"lexicon":"icontv:default"}',
+);

@@ -1,0 +1,15 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => 'BUILD_EVENT_UPDATE',
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '43215d4fd267504d07f2e342e77a8e4e',
+  'package' => 'modx',
+  'class' => 'modEvent',
+  'signature' => 'c114fd77aa12b9ea08d7a8297da0ec3e',
+  'native_key' => 'pbBeforeRemoveImage',
+  'object' => '{"name":"pbBeforeRemoveImage","service":6,"groupname":"PageBlocks"}',
+);

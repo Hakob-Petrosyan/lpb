@@ -1,0 +1,15 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => 'BUILD_EVENT_UPDATE',
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '7324bcad261fd48d5004ae486384a12d',
+  'package' => 'modx',
+  'class' => 'modEvent',
+  'signature' => '4f15343e584049cf33edde190ef19468',
+  'native_key' => 'OnSearchBlock',
+  'object' => '{"name":"OnSearchBlock","service":6,"groupname":"PageBlocks"}',
+);

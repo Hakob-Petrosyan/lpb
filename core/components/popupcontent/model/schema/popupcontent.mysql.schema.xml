@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="popupcontent" baseClass="xPDOObject" platform="mysql" defaultEngine="InnoDB" phpdoc-package="popupcontent"
+       version="1.1">
+
+    <object class="popupcontentItem" table="popupcontent_items" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
+        <field key="type" dbtype="varchar" precision="30" phptype="string" null="false" default=""/>
+        <field key="chunk" dbtype="text" phptype="string" null="true" default=""/>
+        <field key="event" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="clickelement" dbtype="varchar" precision="70" phptype="string" null="true" default=""/>
+        <field key="showtime" dbtype="varchar" precision="10" phptype="string" null="true" default=""/>
+        <field key="howshow" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+        <field key="wheretoplay" dbtype="varchar" precision="4" phptype="string" null="false" default="all"/>
+        <field key="wheretoplayid" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+		<field key="notplayid" dbtype="varchar" precision="100" phptype="string" null="true" default=""/>
+        <field key="clickdo" dbtype="varchar" precision="25" phptype="string" null="false" default="nothing"/>
+        <field key="clickdoelement" dbtype="varchar" precision="50" phptype="string" null="true" default=""/>
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+
+        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+            <column key="name" length="" collation="A" null="false"/>
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false"/>
+        </index>
+    </object>
+
+</model>

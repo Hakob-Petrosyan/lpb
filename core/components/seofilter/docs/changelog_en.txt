@@ -1,0 +1,345 @@
+Changelog for SeoFilter.
+
+1.10.2-beta (13.04.2021)
+=====================
+- added a short variable $_r to the rules with resource data (for pro mode)
+- added msProductOption support to seofilter_select setting
+- fixed warning in the modx action log
+- more correct replacement for meta[name="keywords"], etc.
+
+1.10.1-beta (27.10.2020)
+=====================
+- improved sorting in sfMenu, added support of arrays, json, RAND() and more (the syntax like in pdoMenu)
+
+1.10.0-beta (30.09.2020)
+=====================
+- changed DB engine to InnoDB
+
+1.9.6-beta (18.08.2020)
+=====================
+- fixed selecting TV-fields with conditions by TV-fields
+- added invoke event OnHandleRequest before ajax requests processing
+- removed additional check for double including of js script
+
+1.9.5-beta (17.08.2020)
+=====================
+- added support TV fields to selection settings: seofilter_select, seofilter_choose in format "TV.name"
+
+1.9.4-beta (05.08.2020)
+=====================
+- fix error with placeholders page_number in seo templates
+
+1.9.3-beta (05.07.2020)
+=====================
+- fix frontend js
+- fix last modified
+
+1.9.2-beta (09.06.2020)
+=====================
+- fixed the error for collecting new values by templates
+
+1.9.1-beta (05.06.2020)
+=====================
+- fixed search by sliders
+
+1.9.0-beta (31.05.2020)
+======================
+- improved work with contexts, now you can add condition to field for values collecting (e.g. ({"context_key":"web"}))
+- new parameter &context in snippets sfMenu and sfSitemap (by default it shows links from all contexts);
+- the parameter &context can recieve array or string with comma separated values;
+- new conditions in &where parameter of sfMenu snippet by site pages (&where=`{"modResource.template":1}`)
+- required minimum PHP version 5.5 (it will rise later)
+- added a new setting seofilter_ajax_recount for recounting results in ajax queries (by default no)
+
+1.8.2-beta (30.04.2020)
+======================
+- pagination fix on SEO pages by sliders
+
+1.8.1-beta (10.03.2020)
+======================
+- slider's fix in tagManager2
+
+1.8.0-beta (08.03.2020)
+======================
+- fixed registration two scripts on page
+- added work with tagManager2 (Shopkeeper 3)
+- now using parameter in mSearch2 &filterOptions=`{"autoLoad":0}`
+- a little refactoring with some error fixes
+
+1.7.2-beta (31.01.2020)
+======================
+- returned forgotten parameter "&urls" for the sfMenu (receives ids of SEO pages for creating where condition)
+- parameters "rules", "parents" and "urls" in the sfMenu now receive ids as string "1,-2,3" and as array [1,-2,3] (when Fenom)
+- fix for slider's work (when loading, sets the lower and upper boundaries taking into account other selected filters)
+
+1.7.1-beta (29.01.2020)
+======================
+- PRO-mode: all fields from linked page passed like array $resource (and $original_page) to rules for using {$resource.pagetitle} instead of {$id|resource:'pagetitle'} in each field
+- new events for updating SEO link: sfOnBeforeUrlUpdate, sfOnUrlUpdate
+- new events for deleting SEO link: sfOnBeforeUrlRemove, sfOnUrlRemove
+- added view button when editing SEO links on a separate page
+- fix to work on PHP 5.4 (but recommended 5.6+)
+
+1.7.0-beta (21.08.2019)
+======================
+- small features
+- fix error then slash in aliases
+- now sfLink give itself all rule Ids for recieven page Ids
+- add the new snippet sfNearLink for find nearest breadcrumb link on a product page (super beta)
+- add the new chunk tpl.SeoFilter.crumbs.product for paste to tplCurrent in pdoCrumbs snippet on a product page
+- now minimal PHP verison is 5.4 (was 5.3)
+
+1.6.4-beta (17.03.2019)
+======================
+- Fixed sfMenu class
+- Removed warnings while component installing/deleting
+- MODX 3 support
+- Improved adding default.js to page
+
+1.6.3-beta (11.03.2019)
+=======================
+- Added support for single values for slider
+- Setting seofilter_page_key is now the default "page"
+- Added setting seofilter_page_tpl (template for fURL-pagination, for example "/[[+pageVarKey]]-[[+page]]")
+- Added support for Ajax fURL-pagination in mFilter2
+
+1.6.2-beta (01.02.2019)
+=======================
+- Added keys of settings to the tab Settings
+- Fixed work with rich editor CKEditor
+- Fixed group by rule in sfMenu in pro-mode
+- Fixed integration with FrontendManager
+
+1.6.1-beta (22.01.2019)
+=======================
+- Updating the name on the SEO pages, if it was empty (when adding a template for the name in the rule)
+- Automatic generation of a name template if it is empty (when adding fields to the rule)
+- Two new conditions LIKE, NOT LIKE when adding a field to the rule
+- Hidden ability to change the url mask in the rules (without validation checks)
+
+1.6.0-beta (14.01.2019)
+======================
+- Added more popup descriptions for the fields, renamed some items
+- Seriously redone js-file for the frontend (old with a postscript -old)
+- Possibility to upload content and url to an SEO page from any filter
+- Added events for plugins when adding words, links and returning SEO data
+- Ability to connect the visual editor or Ace for any fields in the rule / page
+- New Settings tab for maximum convenience
+- Tabs and grids in the admin panel now remember the state
+- Sort by active objects is now in the Actions column
+- Step-by-step conversion and removal of empty pages in SEO pages
+- The condition for limiting the collection of field values ​​has become much more serious.
+- Nested breadcrumbs with autosearch (chunk tpl.SeoFilter.crumbs.nested)
+- Support requests with percentages, pluses and ampersands
+- Ability to change the class path for snippets
+- There are examples of filled fields when adding
+- Improved calculations, bug fixes
+
+1.5.4-beta (16.07.2018)
+=======================
+- Setting "seofilter_url_scheme" by default "full";
+- The new sfLink snippet parameter is "link_classes". Classes for link;
+- Words can now be disabled and they will not participate in the formation of links. Links with them are deleted. Re-enabling will create new links;
+- Added accounting of the "seofilter_admin_version" setting, which is responsible for the versioning of scripts in the admin panel. If versioning is not needed - add the setting to manual with a value of 0;
+- Fixed the formation of links, addresses when links in one level and are tied to the main page;
+- Fixed counting for the sliders fields, if they are based on TV fields;
+- Some improvements and renaming in the admin panel.
+
+1.5.3-beta (19.06.2018)
+=======================
+- Little fixes for counting through extend class
+- Now inactive fields just for don't collect values
+
+1.5.2-beta (01.06.2018)
+=======================
+- Fixed page list processor
+- Fixed the installation of pdoTools
+
+1.5.1-beta
+==============
+- Fixed snippet sfLink to work with Pro-mode
+- The editedon field is corrected in the mysql-scheme
+
+1.5.0-beta
+==============
+- Added PRO-mode, which allows you to bind to the rule several pages
+- Integration with the Tagger component, including calculations
+- Added the ability to receive SEO-links without nesting through the slash (setting seofilter_level_separator)
+- Added the ability to generate a SEO link in 1 level from the site root (setting seofilter_between_urls)
+- Added a seoPage class to override the pdoPage class to get more accurate links in the pagination
+- Small conveniences with calculations:
+- URL's results counter is updated if the value is different
+- New setting for where conditions into new rules
+- Added file for recounting links results via cron
+- New default fields in strict search, so the counts are much more accurate
+- Added item to recalculate link results by word and rule in the table using the right mouse button
+- Optimization and correction of all previous errors
+
+1.4.8-beta
+==============
+- Snippet sfLink now accepts the parameters "pages", "where", "as_name" for easy reference search
+- Corrected work with grouping in sfMenu, supports sorting of rules, with empty sortby sorting according to the passed rules
+- Snippet sfWord returns the whole array with all cases for Fenom (you can use to declare any words)
+- The resource id variable {$id} has been added to the link generation template for using fields
+- Added setting seofilter_replace_host (for those sites where one page is available on several domains)
+- Cleaned the component of unnecessary entries in the log and fixed minor errors, optimized for PHP 7.2
+
+1.4.7-beta
+==============
+- Fixed the mechanism for finding pages in the plugin for sites with duplicates of aliases
+- Fixed work with parents in sfMenu, now strictly the "page:IN" (without OR)
+
+1.4.6-beta
+==============
+- Fixed a bug in the plugin with counting turned off
+
+1.4.5-beta
+==============
+- Added forgotten where for sfMenu
+- Added support for PHP 5.3
+
+1.4.4-beta
+==============
+- Improved stability
+- More "related" functions
+- Many bugs fixed
+- Field dependence is added
+- Fixed counting
+- For counting, a new class has been added, which can be expanded
+- Integration of tvSuperSelect - specify a component in the Field
+- Frozen page addresses are processed
+- Fixed link formation
+- Different suffixes are taken into account by the container
+- Re-generation of reference names when changing a word
+- Interim calculations to speed up the menu
+- Recalculation of results for changes or for a button
+- Improved rule copying
+- Adding a rule in one approach
+- Ajax bread crumbs
+- Added keywords field to rules and links
+- Passing the LastModified parameter
+- Support for browser history on the buttons back, forward
+- Versioning of js, css files
+- Updates in declensions. Now only a token is needed.
+- Integration with msVendorCollections
+- Added hidden features
+- Minor improvements in performance
+
+
+1.3.2-beta
+==============
+- Fixed the formation of links and pages for sites with a modified container suffix
+- Added an experimental property tab in the rule edit window
+- A new placeholder is placed in the JSON format [[!+sf.properties]]
+
+1.3.1-beta
+==============
+- Minor corrections on TV-fields
+- Removed forgotten from the menu output to the log
+- Changed the path search in action.php
+
+1.3.0-beta
+==============
+- Added sfMenu snippet to form menu with resource counting
+- Added snippet sfSitemap for sitemap generation
+- Completely rewriting snippet sfLink - much faster and more convenient
+- Corrected the work of the plug-in with nesting of pages
+- Added a new class to work with the menu
+
+1.2.2-beta
+==============
+- Added support for JSON fields, including tvSuperSelect
+- Priority changed for onDocFormSave event to support TVSS
+- Added work with any container suffixes (/,.html, etc)
+- Added a setting for adding your suffix to the generated pages
+- Added redirect to the correct suffix
+- Added a setting with the name of the pagination option, to send the page number to the SEO-texts
+
+1.2.1-beta
+==============
+- Added support for values from other tables for TV fields
+
+1.2.0-beta
+==============
+- Added work for the work of fields-sliders (inexpensive goods, etc.)
+- Fixed some bugs in js and in the class
+- Automatic generation of names for new links when adding new words
+- Lexicon component translated into English
+- Removed from the class by default, so that there is no substitution on empty js fields
+
+1.1.3-beta
+==============
+- Added copying rules
+- Templates for the name of the link and tick to regenerate
+- Changed the mechanism for calculating descendants and samples
+- Adding rules with the inclusion of fields-sliders (price, etc.)
+- Two new settings for the name of the link
+
+1.1.2-beta
+==============
+- Fixed working with TV-fields
+
+1.1.1-beta
+==============
+- Neighboring tabs are now automatically updated
+- Small fixes
+
+1.1.0-beta
+==============
+- Fixed Lexicons
+- Fixed js-file for processing headers
+- Removed unnecessary comments
+- Small bugs and bugs fixed
+
+1.0.10-beta
+==============
+- Added conditions for the fields in the rule to create certain pages
+- Added a field editedon for the rule and a combobox with a page selection
+- Corrected the counting of min / max samples by TV values
+- Powerful code upgrade in the rule search logic, priorities for rules
+- Added snfpet sfLink for creating links by several rules
+
+1.0.9-beta
+==============
+- New comboboxes in the dictionary, by field and value for faster searching for the right addresses
+
+1.0.8-beta
+==============
+- Added a column with editing date for the dictionary
+
+1.0.7-beta
+==============
+- Returned the addition of a word to the dictionary, so it's more convenient
+- I made a normal 404 page for non-existent pages (from the admin you can check the page by get-parameters)
+
+1.0.6-beta
+==============
+- Output for editing in the URL windows items related to the display of the menu
+
+1.0.5-beta
+==============
+- Added a control for editing unique meta tags from the frontend for each page
+- Added a new class for linking URLs with fields and words
+- Now after editing the field, words are updated with all related data
+
+1.0.4-beta
+==============
+- Added the function of selecting the minimum and maximum values.
+- Added prepareSnippet for substitution of processed values ​​in meta tags
+
+1.0.3-beta
+==============
+- Error correction
+- Added the count function. Activate in settings. Count in the placeholder
+
+1.0.2-beta
+==============
+- The component's logic is rewritten
+
+1.0.1-beta
+==============
+- Added work with all fields
+
+1.0.0-beta
+==============
+- First Release

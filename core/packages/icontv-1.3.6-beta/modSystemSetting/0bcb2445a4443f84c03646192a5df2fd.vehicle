@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'icontv',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'a38d16385be629d5ddeaf9f09c749ae5',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '0bcb2445a4443f84c03646192a5df2fd',
+  'native_key' => 'icontv.destroy.api',
+  'object' => '{"key":"icontv.destroy.api","value":1,"xtype":"combo-boolean","namespace":"icontv","area":"icontv.main","editedon":null,"lexicon":"icontv:default"}',
+);

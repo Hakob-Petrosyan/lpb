@@ -1,0 +1,213 @@
+2.2.3-pl
+===================
+- Improved compatibility with MODX 2.7.x
+
+2.2.2-pl
+===================
+- Font bug fix
+
+2.2.1-pl
+===================
+- controlErrorLog support added
+
+2.2.0-pl
+===================
+- Bug Fixes
+- Add installer protection
+
+2.1.3-pl
+===================
+- Bug Fixes
+
+2.1.2-beta
+===================
+- Fix scroll for easyComm
+
+2.1.1-beta
+===================
+- Fix scroll for Tickets
+
+2.1.0-beta
+===================
+- Add SVG support to image TV
+- Improve compatibility with Collections & msImportExport
+
+2.0.6-beta
+===================
+- Bug Fixes
+
+2.0.5-beta
+===================
+- MiniShop2 Gallery desktop hotfix
+
+2.0.4-beta
+===================
+- MiniShop2 Gallery fixed
+- bdAdmin support added
+- tagElementPlugin support added
+- Security Forms header fixed
+- Site schedule header fixed
+
+2.0.3-beta
+===================
+- Bug Fixes
+
+2.0.2-beta
+===================
+- Script bugs fixed
+
+2.0.1-beta
+===================
+- Added support for MODX 2.6.0
+
+2.0.0-beta
+===================
+- FULL UPDATE !
+    New styles, New scripts, New system settings !
+
+
+1.1.4-beta
+===================
+- Update manager tpls to MODX 2.5.7
+- Update manager login css
+
+
+1.1.3-beta
+===================
+- FontAwesome Update.
+
+1.1.2-beta
+===================
+- Login fixed.
+
+1.1.1-beta
+===================
+- Bugs fixed.
+
+1.1.0-beta
+===================
+- Fixed display of the sidebar on mobile devices
+
+1.0.11-pl
+===================
+- Improved compatibility with MiniShop2
+- Bugs fixed.
+
+1.0.10-pl
+===================
+- Added breadcrumbs to the packege manager
+- The scripts rewritten to Vanila JS.
+
+1.0.9-pl
+===================
+- Small bugs fixed.
+
+1.0.8-pl
+===================
+Fixed display checkboxes in the MiniShop goods options settings 
+
+
+1.0.7-pl
+===================
+- Tested with:
+
+    Ace
+    BannerY
+    Collections
+    FormIt
+    Gallery
+    MIGX
+    MiniShop2
+    ModDevTools
+    mSearch2
+    msImportExport
+    SEO Pro
+    SEO Tab
+    Tagger
+    Tickets
+    TinyMCE Rich Text Editor
+    VersionX
+
+- Small bugs fixed.
+
+
+1.0.6-pl
+===================
+- Added webkit custom scrollbar for all frames
+
+- Tested with:
+
+    Ace
+    BannerY
+    Collections
+    FormIt
+    Gallery
+    MIGX
+    MiniShop2
+    ModDevTools
+    mSearch2
+    msImportExport
+    SEO Pro
+    SEO Tab
+    Tagger
+    Tickets
+    VersionX
+
+- Small bugs fixed.
+
+
+1.0.5-pl
+===================
+- Added custom scrolling for Chrome
+
+- Tested with:
+
+    Ace
+    BannerY
+    Collections
+    Gallery
+    MIGX
+    MiniShop2
+    ModDevTools
+    msImportExport
+    SEO Pro
+    SEO Tab
+    Tickets
+    VersionX
+
+- Small bugs fixed.
+
+
+1.0.4-pl
+===================
+- Improved compatibility with:
+
+    Ace
+    Collections
+    Gallery
+    MiniShop2
+    ModDevTools
+    msImportExport
+    SEO Pro
+    SEO Tab
+    Tickets
+    VersionX
+
+- Small bugs fixed.
+
+
+1.0.3-pl
+===================
+- Skipped
+
+1.0.2-pl
+===================
+- Improved compatibility with Revolution 2.5.1-pl Advanced
+
+1.0.1-pl
+===================
+- Small fixes.
+
+1.0.0-pl
+===================
+- Initial release

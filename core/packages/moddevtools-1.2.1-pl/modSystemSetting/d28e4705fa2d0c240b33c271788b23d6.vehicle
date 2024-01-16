@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'moddevtools',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'c4bba538f41907b08d5b82f024925539',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'd28e4705fa2d0c240b33c271788b23d6',
+  'native_key' => 'moddevtools_virtual_chunks',
+  'object' => '{"key":"moddevtools_virtual_chunks","value":false,"xtype":"combo-boolean","namespace":"moddevtools","area":"moddevtools_main","editedon":null}',
+);

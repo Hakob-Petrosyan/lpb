@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'LightTheme',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '3e0215a64bdb125c54b2b59f9ba37f92',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'dce1f9078594f5e9732f84bedef87db9',
+  'native_key' => 'lg_theme_auth_bgphoto',
+  'object' => '{"key":"lg_theme_auth_bgphoto","value":"","xtype":"textfield","namespace":"LightTheme","area":"","editedon":null}',
+);

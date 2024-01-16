@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'LightTheme',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '5bd25cabbaa2efda5c8b5da0ea7d7bb8',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '0482ee148e3b661c720ef9aa62daf6c5',
+  'native_key' => 'lg_theme_font',
+  'object' => '{"key":"lg_theme_font","value":"1","xtype":"numberfield","namespace":"LightTheme","area":"","editedon":null}',
+);

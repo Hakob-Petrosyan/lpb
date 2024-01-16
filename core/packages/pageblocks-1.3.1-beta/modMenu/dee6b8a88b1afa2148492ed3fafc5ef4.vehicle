@@ -1,0 +1,17 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => true,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '9646673232cdcafca88194763300c4ec',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => 'dee6b8a88b1afa2148492ed3fafc5ef4',
+  'native_key' => 'pageblocks',
+  'object' => '{"text":"pageblocks","parent":"topnav","action":"","description":"pb_menu_desc","icon":"<i class=\\"icon icon-large icon-th\\"><\\/i> PageBlocks","menuindex":99,"params":"","handler":"","permissions":"","namespace":"pageblocks"}',
+);

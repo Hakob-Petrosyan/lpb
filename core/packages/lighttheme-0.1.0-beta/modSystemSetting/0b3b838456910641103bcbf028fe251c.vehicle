@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'LightTheme',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'dc43c11cfa438ae462cfe1e02c389470',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '0b3b838456910641103bcbf028fe251c',
+  'native_key' => 'lg_theme_bg_txt_color',
+  'object' => '{"key":"lg_theme_bg_txt_color","value":"","xtype":"textfield","namespace":"LightTheme","area":"","editedon":null}',
+);

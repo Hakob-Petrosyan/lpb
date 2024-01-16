@@ -1,0 +1,115 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Chunks' => 
+    array (
+      '6175abea401edb16a55e60270d2c4935' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => false,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":0,"source":1,"property_preprocess":0,"name":"tpl.wrapYoutube","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<a href=\\"[[+link]]\\" data-toggle=\\"modal\\" data-target=\\"#modal_[[+id]]\\" class=\\"WY_link\\">\\n    <img src=\\"[[+img]]\\" width=\\"[[+width]]\\" height=\\"[[+height]]\\">\\n<\\/a>\\n\\n<div class=\\"modal fade WY_modal\\" id=\\"modal_[[+id]]\\" tabindex=\\"-1\\" role=\\"dialog\\"\\n aria-labelledby=\\"modal_label_[[+id]]\\" data-embed=\\"[[+embed]]\\">\\n  <div class=\\"modal-dialog\\" role=\\"document\\">\\n    <div class=\\"modal-content\\">\\n      <div class=\\"modal-body WY_body\\">\\n      <\\/div>\\n    <\\/div>\\n  <\\/div>\\n<\\/div>","locked":0,"properties":null,"static":0,"static_file":"core\\/components\\/wrapyoutube\\/elements\\/chunks\\/chunk.wrap.tpl","content":"<a href=\\"[[+link]]\\" data-toggle=\\"modal\\" data-target=\\"#modal_[[+id]]\\" class=\\"WY_link\\">\\n    <img src=\\"[[+img]]\\" width=\\"[[+width]]\\" height=\\"[[+height]]\\">\\n<\\/a>\\n\\n<div class=\\"modal fade WY_modal\\" id=\\"modal_[[+id]]\\" tabindex=\\"-1\\" role=\\"dialog\\"\\n aria-labelledby=\\"modal_label_[[+id]]\\" data-embed=\\"[[+embed]]\\">\\n  <div class=\\"modal-dialog\\" role=\\"document\\">\\n    <div class=\\"modal-content\\">\\n      <div class=\\"modal-body WY_body\\">\\n      <\\/div>\\n    <\\/div>\\n  <\\/div>\\n<\\/div>"}',
+        'guid' => '0c4c62b41ed79a25fd5ca14f7d0567b8',
+        'native_key' => 0,
+        'signature' => 'a461a91ce8fc7375bbb8571ee58c7c9e',
+      ),
+    ),
+    'Plugins' => 
+    array (
+      'a40328cb5ae0b3f9f3aff4573b0fb7d7' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":1,"property_preprocess":0,"name":"wrapYoutube","description":"","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/** @var modX $modx *\\/\\nswitch ($modx->event->name) {\\n    case \'OnWebPagePrerender\':\\n        $excluded = $modx->getOption(\'wrapyoutube_excluded_templates\', null, \'\');\\n        if ($excluded !== \'\') {\\n            $template = $modx->resource->template;\\n            $tmpl_arr = explode(\',\', $excluded);\\n            if (in_array($template, $tmpl_arr)) {\\n                return;\\n            }\\n        }\\n        $tpl = $modx->getOption(\'wrapyoutube_tpl\', null, \'tpl.wrapYoutube\');\\n        if (!$modx->getObject(\'modChunk\', array(\'name\' => $tpl))) {\\n            return;\\n        }\\n        require_once $modx->getOption(\'core_path\') . \'components\\/wrapyoutube\\/lib\\/simple_html_dom.php\';\\n        $html= new simple_html_dom();\\n        $html->load($modx->resource->_output, false, false, DEFAULT_BR_TEXT);\\n        \\n        $iframes = $html->find(\'iframe\');\\n        if (!$iframes) {\\n            return;\\n        }\\n        foreach($iframes as $iframe) {\\n            if (strpos($iframe->src, \'youtube.com\') !== false) {\\n                $placeholders = array(\\n                    \'id\' => \'\',\\n                    \'img\' => \'\',\\n                    \'link\' => $iframe->src,\\n                    \'embed\' => $iframe->src,\\n                    \'width\' => $iframe->width,\\n                    \'height\' => $iframe->height\\n                );\\n                $matches = array();\\n                preg_match(\'#(\\\\.be\\/|\\/embed\\/|\\/v\\/|\\/watch\\\\?v=)([A-Za-z0-9_-]{5,11})#\', $iframe->src, $matches);\\n                if(isset($matches[2]) && $matches[2] != \'\'){\\n                    $placeholders[\'id\'] = $matches[2];\\n                    $placeholders[\'img\'] = \\"\\/\\/img.youtube.com\\/vi\\/{$placeholders[\'id\']}\\/hqdefault.jpg\\";\\n                    $placeholders[\'embed\'] = \\"\\/\\/www.youtube.com\\/embed\\/{$placeholders[\'id\']}?autoplay=1\\";\\n                }\\n                $iframe->outertext = $modx->getChunk($tpl, $placeholders);\\n            }\\n        }\\n        $css = $modx->getOption(\'wrapyoutube_front_css\', null, \'[[++assets_url]]components\\/wrapyoutube\\/css\\/web\\/default.css\', true);\\n        $js  = $modx->getOption(\'wrapyoutube_front_js\',  null, \'[[++assets_url]]components\\/wrapyoutube\\/js\\/web\\/default.js\',   true);\\n        if ($css) {\\n            $css = str_replace(\'[[++assets_url]]\', $modx->getOption(\'assets_url\'), $css);\\n            $html->find(\'head\', 0)->innertext .= \'<link rel=\\"stylesheet\\" href=\\"\'.$css.\'\\" type=\\"text\\/css\\" \\/>\' . PHP_EOL;\\n        }\\n        if ($js) {\\n            $js = str_replace(\'[[++assets_url]]\', $modx->getOption(\'assets_url\'), $js);\\n            $html->find(\'body\', 0)->innertext .= \'<script type=\\"text\\/javascript\\" src=\\"\'.$js.\'\\"><\\/script>\' . PHP_EOL;\\n        }\\n        $modx->resource->_output = $html;\\n        break;\\n    default:\\n        break;\\n}\\nreturn;","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"core\\/components\\/wrapyoutube\\/elements\\/plugins\\/plugin.wrapyoutube.php","content":"\\/** @var modX $modx *\\/\\nswitch ($modx->event->name) {\\n    case \'OnWebPagePrerender\':\\n        $excluded = $modx->getOption(\'wrapyoutube_excluded_templates\', null, \'\');\\n        if ($excluded !== \'\') {\\n            $template = $modx->resource->template;\\n            $tmpl_arr = explode(\',\', $excluded);\\n            if (in_array($template, $tmpl_arr)) {\\n                return;\\n            }\\n        }\\n        $tpl = $modx->getOption(\'wrapyoutube_tpl\', null, \'tpl.wrapYoutube\');\\n        if (!$modx->getObject(\'modChunk\', array(\'name\' => $tpl))) {\\n            return;\\n        }\\n        require_once $modx->getOption(\'core_path\') . \'components\\/wrapyoutube\\/lib\\/simple_html_dom.php\';\\n        $html= new simple_html_dom();\\n        $html->load($modx->resource->_output, false, false, DEFAULT_BR_TEXT);\\n        \\n        $iframes = $html->find(\'iframe\');\\n        if (!$iframes) {\\n            return;\\n        }\\n        foreach($iframes as $iframe) {\\n            if (strpos($iframe->src, \'youtube.com\') !== false) {\\n                $placeholders = array(\\n                    \'id\' => \'\',\\n                    \'img\' => \'\',\\n                    \'link\' => $iframe->src,\\n                    \'embed\' => $iframe->src,\\n                    \'width\' => $iframe->width,\\n                    \'height\' => $iframe->height\\n                );\\n                $matches = array();\\n                preg_match(\'#(\\\\.be\\/|\\/embed\\/|\\/v\\/|\\/watch\\\\?v=)([A-Za-z0-9_-]{5,11})#\', $iframe->src, $matches);\\n                if(isset($matches[2]) && $matches[2] != \'\'){\\n                    $placeholders[\'id\'] = $matches[2];\\n                    $placeholders[\'img\'] = \\"\\/\\/img.youtube.com\\/vi\\/{$placeholders[\'id\']}\\/hqdefault.jpg\\";\\n                    $placeholders[\'embed\'] = \\"\\/\\/www.youtube.com\\/embed\\/{$placeholders[\'id\']}?autoplay=1\\";\\n                }\\n                $iframe->outertext = $modx->getChunk($tpl, $placeholders);\\n            }\\n        }\\n        $css = $modx->getOption(\'wrapyoutube_front_css\', null, \'[[++assets_url]]components\\/wrapyoutube\\/css\\/web\\/default.css\', true);\\n        $js  = $modx->getOption(\'wrapyoutube_front_js\',  null, \'[[++assets_url]]components\\/wrapyoutube\\/js\\/web\\/default.js\',   true);\\n        if ($css) {\\n            $css = str_replace(\'[[++assets_url]]\', $modx->getOption(\'assets_url\'), $css);\\n            $html->find(\'head\', 0)->innertext .= \'<link rel=\\"stylesheet\\" href=\\"\'.$css.\'\\" type=\\"text\\/css\\" \\/>\' . PHP_EOL;\\n        }\\n        if ($js) {\\n            $js = str_replace(\'[[++assets_url]]\', $modx->getOption(\'assets_url\'), $js);\\n            $html->find(\'body\', 0)->innertext .= \'<script type=\\"text\\/javascript\\" src=\\"\'.$js.\'\\"><\\/script>\' . PHP_EOL;\\n        }\\n        $modx->resource->_output = $html;\\n        break;\\n    default:\\n        break;\\n}\\nreturn;"}',
+        'guid' => 'abe6d4cbc39009ba0b5f91035ba81334',
+        'native_key' => NULL,
+        'signature' => '87f1dc79802478c09608d151c3dab7ab',
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            '6822183fac7eee891555cf3bdf7f2359' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnWebPagePrerender","priority":0,"propertyset":0}',
+              'guid' => 'b7898a420617cb0815bec2c1bdc2d270',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnWebPagePrerender',
+              ),
+              'signature' => '6e0a88cf899ccd436a6bdb57b4d319e7',
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => false,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'wrapyoutube',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"wrapyoutube-1.0.2-pl\\/modCategory\\/5f2b4c14c7debcc02eaa9e40a1aed7c6\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"wrapyoutube"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"wrapyoutube-1.0.2-pl\\/modCategory\\/5f2b4c14c7debcc02eaa9e40a1aed7c6\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"wrapyoutube"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '80e82291b39004faaa5a3b4c9b5d0e23',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '5f2b4c14c7debcc02eaa9e40a1aed7c6',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"wrapYoutube","rank":0}',
+);

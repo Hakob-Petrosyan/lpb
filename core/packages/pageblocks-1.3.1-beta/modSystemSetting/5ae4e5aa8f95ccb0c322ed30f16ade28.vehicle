@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '743cf254edb3bbef629ad0d2ac4397b9',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '5ae4e5aa8f95ccb0c322ed30f16ade28',
+  'native_key' => 'pageblocks_youtube_api_key',
+  'object' => '{"key":"pageblocks_youtube_api_key","value":"","xtype":"textfield","namespace":"pageblocks","area":"pageblocks_video","editedon":null,"name":"setting_pageblocks_youtube_api_key"}',
+);

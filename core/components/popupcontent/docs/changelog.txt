@@ -1,0 +1,10 @@
+Changelog for popupcontent.
+
+2.0.1-pl
+==============
+- add events in adminpanel
+- add id to to not show
+
+2.0.0-pl
+==============
+- New build script.

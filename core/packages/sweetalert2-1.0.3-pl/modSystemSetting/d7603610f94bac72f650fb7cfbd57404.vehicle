@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => true,
+  'related_objects' => false,
+  'namespace' => 'sweetalert2',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '3f4e8a3c7f215a4837f3915ea5b2f2ea',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'd7603610f94bac72f650fb7cfbd57404',
+  'native_key' => 'swal2_ajaxform',
+  'object' => '{"key":"swal2_ajaxform","value":true,"xtype":"combo-boolean","namespace":"sweetalert2","area":"swal2_packages","editedon":null,"name":"setting_swal2_ajaxform"}',
+);

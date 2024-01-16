@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'wrapyoutube',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '40204b238758581e1d22f8d441d27475',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '624697e3e7a8cfa0664ab344db38dda1',
+  'native_key' => 'wrapyoutube_excluded_templates',
+  'object' => '{"key":"wrapyoutube_excluded_templates","value":"","xtype":"textfield","namespace":"wrapyoutube","area":"wrapyoutube_main","editedon":null}',
+);

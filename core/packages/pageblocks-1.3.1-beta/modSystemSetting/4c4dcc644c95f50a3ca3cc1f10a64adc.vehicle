@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'e929f8d84ef0ba69b88652c9b5352edd',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '4c4dcc644c95f50a3ca3cc1f10a64adc',
+  'native_key' => 'pageblocks_search',
+  'object' => '{"key":"pageblocks_search","value":false,"xtype":"combo-boolean","namespace":"pageblocks","area":"pageblocks_main","editedon":null,"name":"setting_pageblocks_search"}',
+);

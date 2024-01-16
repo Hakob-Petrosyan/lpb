@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'b8551b74a4845d98afd4a5cdeed4e572',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '2dc4a9f42a36c8c63bbcbe22f353ca17',
+  'native_key' => 'pageblocks_remove_image',
+  'object' => '{"key":"pageblocks_remove_image","value":false,"xtype":"combo-boolean","namespace":"pageblocks","area":"pageblocks_images","editedon":null,"name":"setting_pageblocks_remove_image"}',
+);

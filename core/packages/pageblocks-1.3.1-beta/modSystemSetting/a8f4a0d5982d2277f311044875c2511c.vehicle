@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '55971c53c466248463a1a9c8df8c7925',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'a8f4a0d5982d2277f311044875c2511c',
+  'native_key' => 'pageblocks_languages',
+  'object' => '{"key":"pageblocks_languages","value":"","xtype":"textfield","namespace":"pageblocks","area":"pageblocks_main","editedon":null,"name":"setting_pageblocks_languages"}',
+);

@@ -1,0 +1,111 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Plugins' => 
+    array (
+      '7228281ccce1580f665f0d4282e19a8c' => 
+      array (
+        'unique_key' => 'name',
+        'preserve_keys' => false,
+        'update_object' => true,
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            '4dac0bd0d46f467cc1b010cdf41915ef' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnWebPageInit","priority":0,"propertyset":0}',
+              'guid' => 'fafe90753409bfc850bedd4a91ff39bf',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnWebPageInit',
+              ),
+              'signature' => 'a48a141807014dc2740c4bca25bfb835',
+            ),
+          ),
+        ),
+        'related_object_attributes' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'preserve_keys' => true,
+            'update_object' => true,
+            'unique_key' => 
+            array (
+              0 => 'pluginid',
+              1 => 'event',
+            ),
+          ),
+        ),
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":1,"property_preprocess":0,"name":"SweetAlert2","description":"","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/** @var modX $modx *\\/\\nif ($modx->event->name != \'OnWebPageInit\') return;\\nif ($SweetAlert2 = $modx->getService(\'SweetAlert2\', \'SweetAlert2\', MODX_CORE_PATH . \'components\\/sweetalert2\\/model\\/\')) {\\n    $SweetAlert2->initialize();\\n}","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"core\\/components\\/sweetalert2\\/elements\\/plugins\\/sweetalert2.php","content":"\\/** @var modX $modx *\\/\\nif ($modx->event->name != \'OnWebPageInit\') return;\\nif ($SweetAlert2 = $modx->getService(\'SweetAlert2\', \'SweetAlert2\', MODX_CORE_PATH . \'components\\/sweetalert2\\/model\\/\')) {\\n    $SweetAlert2->initialize();\\n}","file":"sweetalert2","events":{"OnWebPageInit":[]}}',
+        'guid' => '12ccec3c0cb3b20d531eff39ce6ec44b',
+        'native_key' => NULL,
+        'signature' => '45a775de7e3d2a7b98b7e2461a214192',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Plugins' => 
+    array (
+      'unique_key' => 'name',
+      'preserve_keys' => false,
+      'update_object' => true,
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'PluginEvents' => 
+        array (
+          'preserve_keys' => true,
+          'update_object' => true,
+          'unique_key' => 
+          array (
+            0 => 'pluginid',
+            1 => 'event',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'sweetalert2',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"sweetalert2-1.0.3-pl\\/modCategory\\/33f2db82351d2c6746522bdfbba5f4bb\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"sweetalert2"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"sweetalert2-1.0.3-pl\\/modCategory\\/33f2db82351d2c6746522bdfbba5f4bb\\/1\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"sweetalert2"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"sweetalert2-1.0.3-pl\\/modCategory\\/33f2db82351d2c6746522bdfbba5f4bb.symlinks.resolver","type":"php","name":"symlinks"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'df4a2dc1541d66f31c043d4d520a94c1',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '33f2db82351d2c6746522bdfbba5f4bb',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"SweetAlert2","rank":0}',
+);

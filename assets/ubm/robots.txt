@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /editor/
+Disallow: /basket/
+Disallow: /*print=1
+Disallow: /*sort=
+Disallow: /*show_by=
+
+Host: lpubm.ru
+
+Sitemap: http://lpubm.ru/?sitemap.xml

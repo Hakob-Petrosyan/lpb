@@ -1,0 +1,16 @@
+<?php return array (
+  'class' => 'xPDOFileVehicle',
+  'object' => 
+  array (
+    'source' => 'pageblocks-1.3.1-beta/xPDOFileVehicle/067bee0a7c491bcac9937f974288568e/',
+    'target' => 'return MODX_CORE_PATH . \'components/pageblocks/model/\';',
+    'name' => 'encryptedvehicle.class.php',
+  ),
+  'vehicle_class' => 'xPDOFileVehicle',
+  'uninstall_files' => false,
+  'vehicle_package' => 'transport',
+  'guid' => '0ce96d473676d9e52234ed7ba47a6ebb',
+  'package' => '',
+  'signature' => '067bee0a7c491bcac9937f974288568e',
+  'native_key' => '0ce96d473676d9e52234ed7ba47a6ebb',
+);

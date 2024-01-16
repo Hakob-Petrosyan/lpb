@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => true,
+  'related_objects' => false,
+  'namespace' => 'sweetalert2',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '502fb7958c3f7296d7b52f5e5b8496b9',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '9b35c018a3a0c58ac9fe75fd62bb6fdb',
+  'native_key' => 'swal2_timer',
+  'object' => '{"key":"swal2_timer","value":3000,"xtype":"numberfield","namespace":"sweetalert2","area":"swal2_main","editedon":null,"name":"setting_swal2_timer"}',
+);

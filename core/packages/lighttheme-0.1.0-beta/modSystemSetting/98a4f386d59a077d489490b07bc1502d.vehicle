@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'LightTheme',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'c0f5f197991fd0f19408f58f42ca4ce1',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '98a4f386d59a077d489490b07bc1502d',
+  'native_key' => 'lg_theme_auth_web',
+  'object' => '{"key":"lg_theme_auth_web","value":"http:\\/\\/modx.com","xtype":"textfield","namespace":"LightTheme","area":"","editedon":null}',
+);

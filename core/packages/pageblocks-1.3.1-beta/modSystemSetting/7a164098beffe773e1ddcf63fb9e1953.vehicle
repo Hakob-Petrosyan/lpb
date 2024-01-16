@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '581001aa05a547932abbbaaeaef9fbb3',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '7a164098beffe773e1ddcf63fb9e1953',
+  'native_key' => 'pageblocks_source_path',
+  'object' => '{"key":"pageblocks_source_path","value":"assets\\/images\\/","xtype":"textfield","namespace":"pageblocks","area":"pageblocks_images","editedon":null,"name":"setting_pageblocks_source_path"}',
+);

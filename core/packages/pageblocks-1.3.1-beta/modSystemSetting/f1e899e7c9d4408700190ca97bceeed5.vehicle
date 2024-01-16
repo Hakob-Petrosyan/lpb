@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'fa27554ecf6bf6d5f15a118c6b5141ea',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'f1e899e7c9d4408700190ca97bceeed5',
+  'native_key' => 'pageblocks_create_chunk',
+  'object' => '{"key":"pageblocks_create_chunk","value":true,"xtype":"combo-boolean","namespace":"pageblocks","area":"pageblocks_chunk","editedon":null,"name":"setting_pageblocks_create_chunk"}',
+);

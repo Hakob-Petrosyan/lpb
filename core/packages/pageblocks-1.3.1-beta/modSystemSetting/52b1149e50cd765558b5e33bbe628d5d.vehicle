@@ -1,0 +1,17 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => false,
+  'namespace' => 'pageblocks',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '84146cf3e7a5e7b60c2ea40b6b587545',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '52b1149e50cd765558b5e33bbe628d5d',
+  'native_key' => 'pageblocks_tab_index',
+  'object' => '{"key":"pageblocks_tab_index","value":0,"xtype":"numberfield","namespace":"pageblocks","area":"pageblocks_main","editedon":null,"name":"setting_pageblocks_tab_index"}',
+);
